@@ -7,3 +7,6 @@ l = []
 a = len(i) for i in s:  # 遍历字符串s中每一位元素，并计算出其长度
   l = l.append(a)           # 将各元素长度追加到列表中
 print(l)  
+
+
+# 看到另一种使用map(),split()函数的用法
