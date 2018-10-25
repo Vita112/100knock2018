@@ -5,9 +5,9 @@
 
 # 文字bi-gramの集合を作る関数を作成
 def n_gram(wlist, n):
-	set_1 = list(zip(*[wlist[i:] for i in range(n)]))
-	tem_set = set(set_1)
-	return tem_set
+	n_list = list(zip(*[wlist[i:] for i in range(n)]))
+	list_set = set(n_list)
+	return list_set
 	
 if __name__ == '__main__':
 	str_a = list("paraparaparadise")
