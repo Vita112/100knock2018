@@ -8,7 +8,18 @@
 # 使用ord()函数，返回单个字符的ascii值（0-255）.chr()函数：输入0-255的一个整数，返回其对应的ascii符号。
 
 def cipher(txt):
-    for i in range(len(txt)):
-        if ord(txt[i]) in range(97,123):
-            chr(219-ord(txt[i]))
+	n_txt = ''
+	for i in range(len(txt)):
+		if ord(txt[i]) in range(ord('a'), ord('{')):
+			n_chr = chr(219-ord(txt[i]))
+		else:
+			n_chr = txt[i] 
+		n_txt += n_chr
+		
+	return n_txt
+
+if __name__ == '__main__':
+    txt = 'Hello World! I love NLP.ハローワールド！'
+    print cipher(txt)
+        
     
