@@ -6,16 +6,17 @@
 
 import random
 
-def shuffle_str():
+def shuffle_str(str):
     w_list = raw_txt.replace(':', '').replace('.', '').strip().split()
-    print w_list
-    result = ''
+    result = []
     for w in w_list:
         if len(w) < 4:
             n_word = w
         else:
-            n_word = w[0] + ''.join(random.shuffle(list(w[1:-2]))) + w[-1]
-        result += n_word
+			w_middle =list(w[1:-1])
+			random.shuffle(w_middle)
+            n_word = w[0] + ''.join(w_middle) + w[-1]	
+        result.append(n_word)
         
     return result
                 
@@ -24,5 +25,5 @@ def shuffle_str():
 
 if __name__ == '__main__':
     raw_txt = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
-    
-    
+
+print shuffle_str(raw_txt)
