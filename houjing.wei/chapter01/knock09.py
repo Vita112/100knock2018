@@ -20,11 +20,11 @@ def shuffle_str(str):
 		# print result
 		
 	return ' '.join(result)
-                
+
     
 
 
 if __name__ == '__main__':
-    raw_txt = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
 
-print shuffle_str(raw_txt)
+	raw_txt = "I couldn't believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
+	print (shuffle_str(raw_txt))
