@@ -7,18 +7,19 @@
 import random
 
 def shuffle_str(str):
-    w_list = raw_txt.replace(':', '').replace('.', '').strip().split()
-    result = []
-    for w in w_list:
-        if len(w) < 4:
-            n_word = w
-        else:
+	w_list = raw_txt.replace(':', '').replace('.', '').strip().split()
+	result = []
+	for w in w_list:
+		if len(w) < 4:
+			n_word = w
+		else:
 			w_middle =list(w[1:-1])
 			random.shuffle(w_middle)
-            n_word = w[0] + ''.join(w_middle) + w[-1]	
-        result.append(n_word)
-        
-    return result
+			n_word = w[0] + ''.join(w_middle) + w[-1]	
+		result.append(n_word)
+		# print result
+		
+	return ' '.join(result)
                 
     
 
