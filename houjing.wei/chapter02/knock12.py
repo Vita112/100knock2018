@@ -4,23 +4,24 @@
 
 
 def col_list(pathfile):
-    # result = []
-    # line_array =[]
-    for line in open(pathfile, 'r', encoding='utf-8'):
-        # line_array = line.split(' ')
-        return line.split(' ')
-        # result.append(line_array[n-1] + '\n')
-    # return line_array
-if __name__ == '__main__':
-    path = '../hightemp_test.txt'
-    # col_list(path, 1)
+    result = []
+    for line in open(pathfile, 'r', encoding='utf-8').readlines():    # 打开并读取文件的所有行
+        line_array = line.strip().split()                            # 去掉字符串首位的空格，并以空格切分每一行，返回字符串列表
+        #print(line_array)
+        result.append(line_array)                                    # 将字符串列表追加至result列表中
+        # result.remove()
+    return result
 
-    with open('../col1.txt', 'w',encoding='utf-8') as col1_out, open('../col2.txt', 'w') as col2_out:
-        for col_list in col_list(path):
-            # new_str = ''.join(col_list(path, 1))
-            # print(new_str)
-            col1_out.write(col_list[0])
-            # col2_out.write(new_str)
+
+if __name__ == '__main__':
+    path = '../hightemp.txt'
+    list = col_list(path)
+
+    with open('../col1.txt', 'w',encoding='utf-8') as col1_out, open('../col2.txt', 'w',encoding='utf-8') as col2_out:          # 'with open('文件路径',模式,编码) as 文件名:'：以某种模式打开'文件路径'的文件，执行语句后自动关闭
+        for i in list:
+            col1_out.write(i[0]+'\n')                              # 将内容写入'文件路径'文件中
+            col2_out.write(i[1]+'\n')
+
 
 
 
