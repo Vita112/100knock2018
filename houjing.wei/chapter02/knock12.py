@@ -7,9 +7,8 @@ def col_list(pathfile):
     result = []
     for line in open(pathfile, 'r', encoding='utf-8').readlines():    # 打开并读取文件的所有行
         line_array = line.strip().split()                            # 去掉字符串首位的空格，并以空格切分每一行，返回字符串列表
-        #print(line_array)
         result.append(line_array)                                    # 将字符串列表追加至result列表中
-        # result.remove()
+
     return result
 
 
