@@ -10,8 +10,10 @@ import pprint
 
 def sort_by_col(a, col_index):
     a1 = a.T
+    print(a1)
 
-    col_max = a.shape[1]-1
+    col_max = a.shape[0]-1
+    print(col_max)
 
     if col_index < col_max:
         # 将索引列与最后一列互换。ps：因经过转置，在原数组中应为行。
@@ -28,10 +30,11 @@ def sort_by_col(a, col_index):
 
 if __name__ == '__main__':
     path = '../hightemp.txt'
-    a = []
-    a.append([line.split() for line in open(path, 'r', encoding='utf-8').readlines()])
+    a = list()
+    a.append([line.strip().split() for line in open(path, 'r', encoding='utf-8').readlines()])
     print(a)
     a = np.array(a)
+    print(type(a))
     print('排序前：')
     pprint.pprint(a)
 
