@@ -9,7 +9,7 @@ def sort_txt(pathfile):
 
 
 if __name__ == '__main__':
-    path = '../col1.txt'
+    path = '../knock12_col1.txt'
     sort_txt(path)
 
 

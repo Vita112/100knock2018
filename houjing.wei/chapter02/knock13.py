@@ -11,7 +11,7 @@ def new_txt(path1, path2):
 
 
 if __name__ == '__main__':
-    path_1, path_2 = '../col1.txt', '../col2.txt'
+    path_1, path_2 = '../knock12_col1.txt', '../knock12_col2.txt'
     n_list = list(new_txt(path_1, path_2))
     # print(n_list)
     with open('./knock13.txt', 'w', encoding='utf-8') as f_out:

@@ -17,7 +17,7 @@ if __name__ == '__main__':
     list = col_list(path)
 
     # 'with open('文件路径',模式,编码) as 文件名:'：以某种模式打开'文件路径'的文件，执行语句后自动关闭
-    with open('../col1.txt', 'w',encoding='utf-8') as col1_out, open('../col2.txt', 'w',encoding='utf-8') as col2_out:
+    with open('../knock12_col1.txt', 'w',encoding='utf-8') as col1_out, open('../knock12_col2.txt', 'w',encoding='utf-8') as col2_out:
 
         for i in list:
             col1_out.write(i[0]+'\n')               # 将内容写入'文件路径'文件中
