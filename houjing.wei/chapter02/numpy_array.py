@@ -12,8 +12,6 @@ def sort_by_col(a, col_index):
     pprint.pprint(a1)
     col_max =int(a.shape[1]-1)    # 得到转置后的最后一行索引，对应原数组的最后一列。
     print(col_max)
-
-
     if col_index < col_max:
         # 将a1的索引行与最后一行互换。ps：因经过转置，对应原数组中的列。由此可想到数组的列互换。
         a1[[col_index, col_max],:] = a1[[col_max, col_index],:]
@@ -30,7 +28,7 @@ def sort_by_col(a, col_index):
 
 if __name__ == '__main__':
     path = '../hightemp.txt'
-    lines =[tuple(line.strip().split()) for line in open(path, 'r', encoding='utf-8')]
+    lines = [tuple(line.strip().split()) for line in open(path, 'r', encoding='utf-8')]
     print('将文本转换成字符串列表后：\n',lines)       # 输出元祖元素的列表
     # 定义一个元组数组中，元组中各元素的数据类型
     t = np.dtype([('KEN', str, 20), ('SHI', str, 20), ('hightemp', float), ('date', str, 20)])
