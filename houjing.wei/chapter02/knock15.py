@@ -8,7 +8,7 @@ def tail(pathfile, n):
         result = []
         for i in range(1, n):
             i = -i
-            result.append(lines[i])
+            result.append(lines[i].strip())
         result.reverse()
 
     return print(result)
