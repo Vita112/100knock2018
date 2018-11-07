@@ -10,11 +10,8 @@ def get_UK_data(pathfile):
             # print(dic)
             # print(type(dic))    print(dic['title'])
             if dic['title'] == 'イギリス':
-                with open('../data/knock20.json', 'w', encoding='utf-8') as f:
+                with open('../data/knock20.json', 'w+', encoding='utf-8') as f:
                     f.write(dic['text'])
-
-
-
 
 
 if __name__ == '__main__':
