@@ -3,16 +3,21 @@ Wikipedia記事のJSONファイルを読み込み，「イギリス」に関す�
 import json
 
 
-# with open(pathfile, 'r') as f:
-#     print(json.load(f))
-
+def get_UK_data(pathfile):
+    with open(pathfile, encoding='utf-8') as f:
+        for line in f.readlines():
+            dic = json.loads(line)  #JSON数据已转换为python字典型
+            # print(dic)
+            # print(type(dic))    print(dic['title'])
+            if dic['title'] == 'イギリス':
+                 return dic['text']
 
 
 
 if __name__ == '__main__':
     path = '../data/jawiki-country.json'
-    with open(path, encoding='utf-8') as f:
-        for line in f.readlines():
-            d = json.loads(line)  #JSON数据已转换为python字典型
-            # print(type(d))
-            print(d)
+    UK_data = get_UK_data(path)      # UK_data)数据类型为str
+    #print('イギリス: ', UK_data)
+    #print(len(UK_data))   # 输出37013。？
+    with open('../data/knock20.json','w+',encoding='utf-8') as f:
+         f.write(UK_data)
