@@ -1,9 +1,5 @@
 '''25. テンプレートの抽出
 記事中に含まれる「基礎情報」テンプレートのフィールド名と値を抽出し，辞書オブジェクトとして格納せよ．'''
-import json
-import demjson
-import re
-
 
 # 打开并解码json文件
 def basicinfo(path):
@@ -20,12 +16,6 @@ def basicinfo(path):
                 print(dic)
             if i == '}}':     # 当代码为 "'if '}}' in i:  break  "时，为什么不显示"print(dic)"打印结果。
                 break
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
