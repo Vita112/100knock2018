@@ -17,5 +17,5 @@ def emphasis_remove():
 
 
 # if __name__ == '__main_':
-    # path = '../data/knock20.json'
+    # path = '../data/knock20.json'        # 为什么不返回结果呢？
 print(emphasis_remove())
