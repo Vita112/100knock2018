@@ -6,15 +6,16 @@ sys.path.append(r'H:\weihoujing\PyCharm Community Edition 2018.2.4\projects\houj
 from knock25 import basicinfo
 import re
 
-dic = basicinfo(path)
-emphasis = re.compile(r'(\'\'+)|"')
-def emphasis_remove(path):
+
+def emphasis_remove():
+    dic = basicinfo('../data/knock20.json')
+    # print(dic)
+    emphasis = re.compile(r'(\'\'+)|"')
+    for item in dic:
+        dic[item] = emphasis.sub('', dic[item])
+    return dic
 
 
-
-
-
-
-if __name__ == '__main__':
-    path = '../data/knock20.json'
-    emphasis_remove(path)
+# if __name__ == '__main_':
+    # path = '../data/knock20.json'
+print(emphasis_remove())

@@ -14,11 +14,11 @@ def basicinfo(path):
                 i = i.split(' = ')
                 dic[i[0]] = i[1]
                 # print(dic)
-            if i == '}}':     # 当代码为 "'if '}}' in i:  break  "时，为什么不显示"print(dic)"打印结果。
+            if i == '}}':
                 break
-    return print(dic)
+    return dic
 
 if __name__ == '__main__':
     pathfile = '../data/knock20.txt'
-    basicinfo(pathfile)
+    print(basicinfo(pathfile))
 
