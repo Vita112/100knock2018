@@ -3,5 +3,23 @@
 from knock26 import emphasis_remove
 import re
 
-dic = emphasis_remove()
-linkMarkup= re.compile()
+def linkMarkup_remove(pathfile):
+    dic = emphasis_remove(pathfile)
+    # linkMarkup= re.compile(r'\[http:.*')
+    for item in dic:
+        linkMarkupstr = re.search(r'\[http:.*',dic[item]).group()
+        if linkMarkupstr in dic[item]:
+            print(linkMarkupstr)
+        # if linkMarkupstr in item:
+        #      dic[item] = ''.join(dic[item])
+        # else:
+        #     dic[item] =item
+
+    return dic
+
+
+
+
+if __name__ == '__main__':
+    path = '../data/knock20.json'
+    print(linkMarkup_remove(path))
