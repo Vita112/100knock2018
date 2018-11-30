@@ -5,15 +5,15 @@ import re
 
 def linkMarkup_remove(pathfile):
     dic = emphasis_remove(pathfile)
-    # linkMarkup= re.compile(r'\[http:.*')
+    linkMarkup= re.compile(r'.*(\[http:.*).*')
     for item in dic:
-        linkMarkupstr = re.search(r'\[http:.*',dic[item]).group()
-        if linkMarkupstr in dic[item]:
-            print(linkMarkupstr)
-        # if linkMarkupstr in item:
-        #      dic[item] = ''.join(dic[item])
-        # else:
-        #     dic[item] =item
+        linkMarkupstr = linkMarkup.search(dic[item])
+        if linkMarkupstr:
+            linkMarkupSub_temp =linkMarkupstr.group(1).split()
+            linkMarkupSub = re.sub(r'/{1,}',r'_',linkMarkupSub_temp[0])
+            # 匹配‘//‘或’/‘后，使用’_'替换，虽然去除了链接，但是改变了内容
+            # print(linkMarkupSub)
+            dic[item] = linkMarkupSub
 
     return dic
 
