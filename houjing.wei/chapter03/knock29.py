@@ -18,7 +18,7 @@ if __name__ == '__main__':
             svgname = basicinfodic[item]
             urlstr = str(get_url(svgname))
             print(urlstr)
-            pattern = re.compile(r"\'url\':\'\s(.+)\'")
+            pattern = re.compile(r"'url':'\s(.+)'")
             result = pattern.search(urlstr)
             print(result.group(1))
         else:
